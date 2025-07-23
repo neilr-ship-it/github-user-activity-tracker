@@ -14,8 +14,8 @@ public class ActivityController {
     }
 
     @GetMapping("/github")
-    public List<GithubEvent> getUserActivity(@RequestParam( name = "user") String user) {
-        return githubService.fetchUserEvents(user);
+    public List<GithubEvent> getUserActivity(@RequestParam( name = "user") String user, @RequestParam(name = "type", required = false) String type) {
+        return githubService.fetchUserEvents(user, type);
         //need to implement fetchUserEvents in GithubService
         
     }
